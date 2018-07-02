@@ -30,12 +30,12 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/EditText"
+        android:id="@+id/ProductEditText"
         android:background="@color/colorTextIcons"
         android:layout_above="@+id/shoppingButton"
         android:layout_marginBottom="10dp"
         android:padding="5dp"
-        android:hint="Enter item name"
+        android:hint="Enter product name"
         android:layout_centerHorizontal="true" />
 
     <Button
