@@ -3,24 +3,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.github.kavata9.myshoping.MainActivity">
+    tools:context="com.github.kavata9.myshoping.MainActivity"
+    android:background="#f4426b">
 
     <ImageView
+        android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:id="@+id/imageView"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:scaleType="centerCrop"
         android:src="@drawable/background"
-        android:scaleType="centerCrop" />
+        android:layout_alignParentLeft="true" />
 
     <TextView
-        android:id="@+id/textView"
         android:layout_width="wrap_content"
-        android:layout_height="47dp"
+        android:layout_height="wrap_content"
+        android:text="My shopping "
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="12dp"
-        android:text="MyShopping Time!!"
-        android:textColor="@color/colorPrimaryDark" />
+        android:layout_marginTop="35dp"
+        android:textColor="@color/colorPrimaryLight"
+        android:textSize="40sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/EditText"
+        android:background="@color/colorTextIcons"
+        android:layout_above="@+id/shoppingButton"
+        android:layout_marginBottom="10dp"
+        android:padding="5dp"
+        android:hint="Enter item name"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="match_parent"
