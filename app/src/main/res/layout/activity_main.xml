@@ -19,19 +19,20 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="My shopping "
+        android:text="MyShopping"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="35dp"
-        android:textColor="@color/colorPrimaryLight"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="40sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:id="@+id/appNameTextView"/>
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/ProductEditText"
-        android:background="@color/colorTextIcons"
+        android:background="@color/colorPrimary"
         android:layout_above="@+id/shoppingButton"
         android:layout_marginBottom="10dp"
         android:padding="5dp"
