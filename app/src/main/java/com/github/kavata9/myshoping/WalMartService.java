@@ -1,5 +1,8 @@
 package com.github.kavata9.myshoping;
 
+import android.util.Log;
+
+import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
@@ -20,6 +23,11 @@ public class WalMartService {
         Request request= new Request.Builder()
                 .url(url)
                 .build();
+
+
+        Log.d("Generated", "Request: "+request);
+        Call call = client.newCall(request);
+        call.enqueue(callback);
 
 
     }
