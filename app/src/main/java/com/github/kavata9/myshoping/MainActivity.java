@@ -11,23 +11,30 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class MainActivity extends Activity {
     public static final String TAG = MainActivity.class.getSimpleName();
-    private Button mLetsshopButton;
-    private EditText mProductEditText;
-    private TextView mAppNameTextView;
+    @BindView(R.id.shoppingButton) Button mLetsshopButton;
+    @BindView(R.id.ProductEditText) EditText mProductEditText;
+    @BindView(R.id.appNameTextView) TextView mAppNameTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
 
 
         mAppNameTextView = (TextView) findViewById(R.id.appNameTextView);
         Typeface PacificoFont = Typeface.createFromAsset(getAssets(), "Pacifico.ttf");
+
         mAppNameTextView.setTypeface(PacificoFont);
         mProductEditText = (EditText) findViewById(R.id.ProductEditText);
         mLetsshopButton = (Button) findViewById(R.id.shoppingButton);
+
+
         mLetsshopButton.setOnClickListener(new View.OnClickListener() {
 
 

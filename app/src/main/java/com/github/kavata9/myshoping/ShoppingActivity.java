@@ -10,14 +10,15 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class ShoppingActivity extends Activity {
-    private TextView mProductTextView;
-    private ListView mListView;
-    private String[] products = new String[] {"Mi Mero Mole", "Mother's Bistro",
-            "Life of Pie", "Screen Door", "Luc Lac", "Sweet Basil",
-            "Slappy Cakes", "Equinox", "Miss Delta's", "Andina",
-            "Lardo", "Portland City Grill", "Fat Head's Brewery",
-            "Chipotle", "Subway"};
+    @BindView(R.id.productTextView) TextView mProductTextView;
+    @BindView(R.id.listView) ListView mListView;
+
+
+    private String[] products = new String[] {""};
 
 
 
@@ -26,6 +27,7 @@ public class ShoppingActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shopping);
+        ButterKnife.bind(this);
 
         mListView = (ListView) findViewById(R.id.listView);
         mProductTextView = (TextView) findViewById(R.id.productTextView);
