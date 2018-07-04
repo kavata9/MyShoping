@@ -3,6 +3,8 @@ package com.github.kavata9.myshoping.ui;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -12,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.kavata9.myshoping.R;
+import com.github.kavata9.myshoping.adapters.ShoppingListAdapter;
 import com.github.kavata9.myshoping.models.Item;
 import com.github.kavata9.myshoping.models.Items;
 import com.github.kavata9.myshoping.services.WalMartService;
@@ -31,8 +34,8 @@ import okhttp3.Response;
 public class ShoppingActivity extends Activity {
     public static final String TAG = ShoppingActivity.class.getSimpleName();
 
-    @BindView(R.id.productTextView) TextView mProductTextView;
-    @BindView(R.id.listView) ListView mListView;
+    @BindView(R.id.recyclerView) RecyclerView mRecyclerView;
+    private ShoppingListAdapter mAdapter;
 
     public List<Item> products = new ArrayList<>();
 
@@ -68,28 +71,15 @@ public class ShoppingActivity extends Activity {
 
                     @Override
                     public void run() {
-                        String[] productNames = new String[products.size()];
-                        for (int i = 0; i < productNames.length; i++) {
-                            productNames[i] = products.get(i).getName();
-                        }
-
-                        ArrayAdapter adapter = new ArrayAdapter(ShoppingActivity.this,
-                                android.R.layout.simple_list_item_1, productNames);
-                        mListView.setAdapter(adapter);
-
-                        for (Item item : products) {
-                            Log.d(TAG, "Name: " + item.getName());
-                            Log.d(TAG, "salePrice: " + item.getSalePrice());
-                            Log.d(TAG, "productUrl: " + item.getProductUrl());
-                            Log.d(TAG, "mediumImage : " + item.getMediumImage());
-                            Log.d(TAG, "customerRating: " + item.getCustomerRating());
-                            Log.d(TAG, "categoryNode: " + item.getCategoryNode());
-                            Log.d(TAG, "availableOnline: " + item.getAvailableOnline().toString());
-                        }
+                        mAdapter = new ShoppingListAdapter(getApplicationContext(), products);
+                        mRecyclerView.setAdapter(mAdapter);
+                        RecyclerView.LayoutManager layoutManager =
+                                new LinearLayoutManager(ShoppingActivity.this);
+                        mRecyclerView.setLayoutManager(layoutManager);
+                        mRecyclerView.setHasFixedSize(true);
                     }
                 });
             }
         });
     }
 }
-

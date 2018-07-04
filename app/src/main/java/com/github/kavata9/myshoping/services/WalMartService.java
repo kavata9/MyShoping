@@ -41,7 +41,7 @@ public class WalMartService {
                 .build();
 
 
-        Log.d("Generated", "Request: "+request);
+//        Log.d("Generated", "Request: "+request);
         Call call = client.newCall(request);
         call.enqueue(callback);
 
