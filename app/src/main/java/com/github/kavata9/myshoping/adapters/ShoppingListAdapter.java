@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.github.kavata9.myshoping.R;
 import com.github.kavata9.myshoping.models.Item;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,6 +60,9 @@ public class ShoppingListAdapter extends RecyclerView.Adapter<ShoppingListAdapte
         }
 
         public void bindProducut(Item item) {
+
+            Picasso.with(mContext).load(item.getMediumImage()).into(mImageView);
+
             mNameTextView.setText(item.getName());
             mCategoryTextView.setText(item.getCategoryNode());
             mRatingTextView.setText("Rating: " + item.getCustomerRating() + "/5");
