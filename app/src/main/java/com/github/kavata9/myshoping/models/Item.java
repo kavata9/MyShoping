@@ -5,8 +5,12 @@ import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Item {
+import org.parceler.Parcel;
 
+
+@Parcel
+
+public class Item {
 
 
     @SerializedName("itemId")

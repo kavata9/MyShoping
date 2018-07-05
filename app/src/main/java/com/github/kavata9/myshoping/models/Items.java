@@ -5,6 +5,10 @@ import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import org.parceler.Parcel;
+
+@Parcel
+
 public class Items {
 
     @SerializedName("query")
@@ -28,9 +32,9 @@ public class Items {
     @SerializedName("items")
     @Expose
     private List<Item> items = null;
-    @SerializedName("facets")
-    @Expose
-    private List<Object> facets = null;
+//    @SerializedName("facets")
+//    @Expose
+//    private List<Object> facets = null;
 
     /**
      * No args constructor for use in serialization
@@ -59,7 +63,7 @@ public class Items {
         this.start = start;
         this.numItems = numItems;
         this.items = items;
-        this.facets = facets;
+//        this.facets = facets;
     }
 
     public String getQuery() {
@@ -118,12 +122,12 @@ public class Items {
         this.items = items;
     }
 
-    public List<Object> getFacets() {
-        return facets;
-    }
-
-    public void setFacets(List<Object> facets) {
-        this.facets = facets;
-    }
+//    public List<Object> getFacets() {
+//        return facets;
+//    }
+//
+//    public void setFacets(List<Object> facets) {
+//        this.facets = facets;
+//    }
 
 }
