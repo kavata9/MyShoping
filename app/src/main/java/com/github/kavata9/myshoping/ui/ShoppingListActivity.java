@@ -5,18 +5,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.github.kavata9.myshoping.R;
 import com.github.kavata9.myshoping.adapters.ShoppingListAdapter;
 import com.github.kavata9.myshoping.models.Item;
-import com.github.kavata9.myshoping.models.Items;
 import com.github.kavata9.myshoping.services.WalMartService;
 
 import java.io.IOException;
@@ -31,8 +23,8 @@ import okhttp3.Response;
 
 
 
-public class ShoppingActivity extends Activity {
-    public static final String TAG = ShoppingActivity.class.getSimpleName();
+public class ShoppingListActivity extends Activity {
+    public static final String TAG = ShoppingListActivity.class.getSimpleName();
 
     @BindView(R.id.recyclerView) RecyclerView mRecyclerView;
     private ShoppingListAdapter mAdapter;
@@ -67,14 +59,14 @@ public class ShoppingActivity extends Activity {
             public void onResponse(Call call, Response response) {
                products = walMartService.result(response);
 
-                ShoppingActivity.this.runOnUiThread(new Runnable() {
+                ShoppingListActivity.this.runOnUiThread(new Runnable() {
 
                     @Override
                     public void run() {
                         mAdapter = new ShoppingListAdapter(getApplicationContext(), products);
                         mRecyclerView.setAdapter(mAdapter);
                         RecyclerView.LayoutManager layoutManager =
-                                new LinearLayoutManager(ShoppingActivity.this);
+                                new LinearLayoutManager(ShoppingListActivity.this);
                         mRecyclerView.setLayoutManager(layoutManager);
                         mRecyclerView.setHasFixedSize(true);
                     }

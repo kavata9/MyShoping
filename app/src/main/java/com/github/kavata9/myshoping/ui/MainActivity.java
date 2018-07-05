@@ -42,7 +42,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 String product = mProductEditText.getText().toString();
-                Intent intent = new Intent(MainActivity.this, ShoppingActivity.class);
+                Intent intent = new Intent(MainActivity.this, ShoppingListActivity.class);
                 intent.putExtra("product", product);
                 startActivity(intent);
                 Toast.makeText(MainActivity.this, "Shopping Time!", Toast.LENGTH_LONG).show();

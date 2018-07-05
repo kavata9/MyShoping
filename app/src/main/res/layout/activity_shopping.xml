@@ -7,7 +7,7 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:paddingTop="16dp"
-    tools:context=".ui.ShoppingActivity">
+    tools:context=".ui.ShoppingListActivity">
 
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"

@@ -48,7 +48,7 @@ public class ShoppingListAdapter extends RecyclerView.Adapter<ShoppingListAdapte
     public class ShoppingViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.ImageView) ImageView mImageView;
         @BindView(R.id.productNameTextView) TextView mNameTextView;
-        @BindView(R.id.categoryNodeTextView) TextView mCategoryTextView;
+        @BindView(R.id.salePriceTextView) TextView mSalePriceTextView;
         @BindView(R.id.customerRatingTextView) TextView mRatingTextView;
 
         private Context mContext;
@@ -64,10 +64,8 @@ public class ShoppingListAdapter extends RecyclerView.Adapter<ShoppingListAdapte
             Picasso.with(mContext).load(item.getMediumImage()).into(mImageView);
 
             mNameTextView.setText(item.getName());
-            mCategoryTextView.setText(item.getCategoryNode());
-            mRatingTextView.setText("Rating: " + item.getCustomerRating() + "/5");
+            mSalePriceTextView.setText("Price: " + item.getSalePrice() + "/5");
+            mRatingTextView.setText( item.getCustomerRating());
         }
     }
 }
-
-
