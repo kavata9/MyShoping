@@ -49,14 +49,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
             @Override
             public void onClick(View v) {
-                if (v == mLetsshopButton) {
-                    String product = mProductEditText.getText().toString();
-                    if(!(product).equals("")) {
-                        addToSharedPreferences(product);
-                    }
-                    Intent intent = new Intent(MainActivity.this, ShoppingListActivity.class);
-                    startActivity(intent);
-                }
+                String product = mProductEditText.getText().toString();
+                Intent intent = new Intent(MainActivity.this, ShoppingListActivity.class);
+                addToSharedPreferences(product);
+                intent.putExtra("product", product);
+                startActivity(intent);
                 Toast.makeText(MainActivity.this, "Shopping Time!", Toast.LENGTH_LONG).show();
             }
 

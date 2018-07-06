@@ -2,13 +2,10 @@ package com.github.kavata9.myshoping.ui;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import com.github.kavata9.myshoping.Constants;
 import com.github.kavata9.myshoping.R;
 import com.github.kavata9.myshoping.adapters.ShoppingListAdapter;
 import com.github.kavata9.myshoping.models.Item;
@@ -29,10 +26,6 @@ import okhttp3.Response;
 public class ShoppingListActivity extends Activity {
     public static final String TAG = ShoppingListActivity.class.getSimpleName();
 
-    private SharedPreferences mSharedPreferences;
-    private String mRecentProduct;
-
-
     @BindView(R.id.recyclerView) RecyclerView mRecyclerView;
     private ShoppingListAdapter mAdapter;
 
@@ -48,17 +41,9 @@ public class ShoppingListActivity extends Activity {
         Intent intent = getIntent();
         String product = intent.getStringExtra("product");
 
-
-
 //        mProductTextView.setText("Here are all the : " + product);
 
         getProducts(product);
-        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        mRecentProduct = mSharedPreferences.getString(Constants.PREFERENCES_PRODUCT_KEY, null);
-        if (mRecentProduct != null) {
-            getProducts(mRecentProduct);
-        }
-
     }
 
     private void getProducts(String product) {
