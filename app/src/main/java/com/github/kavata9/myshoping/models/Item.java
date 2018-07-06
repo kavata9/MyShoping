@@ -176,6 +176,7 @@ public class Item {
         this.offerType = offerType;
         this.isTwoDayShippingEligible = isTwoDayShippingEligible;
         this.availableOnline = availableOnline;
+
     }
 
     public Integer getItemId() {
@@ -416,6 +417,11 @@ public class Item {
 
     public void setAvailableOnline(Boolean availableOnline) {
         this.availableOnline = availableOnline;
+    }
+
+    public String getLargeImageUrl(String imageUrl) {
+        String largeImageUrl = imageUrl.substring(0, imageUrl.length() - 6).concat("o.jpg");
+        return largeImageUrl;
     }
 
 }

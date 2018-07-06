@@ -23,6 +23,10 @@ import butterknife.ButterKnife;
  */
 public class ShoppingDetailFragment extends Fragment {
 
+
+    private static final int MAX_WIDTH = 400;
+    private static final int MAX_HEIGHT = 300;
+
     @BindView(R.id.ImageView)
     ImageView mImageLabel;
     @BindView(R.id.productNameTextView)
@@ -55,7 +59,11 @@ public class ShoppingDetailFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_shopping_detail, container, false);
         ButterKnife.bind(this, view);
 
-        Picasso.with(view.getContext()).load(mItem.getMediumImage()).into(mImageLabel);
+        Picasso.with(view.getContext())
+                .load(mItem.getMediumImage())
+                .resize(MAX_WIDTH, MAX_HEIGHT)
+                .centerCrop()
+                .into(mImageLabel);
 
 
         mNameLabel.setText(mItem.getName());
@@ -65,5 +73,8 @@ public class ShoppingDetailFragment extends Fragment {
 
         return view;
     }
+
+
+    
 }
 

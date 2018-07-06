@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "576702363979",
+    "firebase_url": "https://myshopping-4892f.firebaseio.com",
+    "project_id": "myshopping-4892f",
+    "storage_bucket": "myshopping-4892f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:576702363979:android:92605a8f84ab9138",
+        "android_client_info": {
+          "package_name": "com.github.kavata9.myshoping"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "576702363979-55cddt3kjmdnmpvd2crer779lg4o6pqm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.github.kavata9.myshoping",
+            "certificate_hash": "d07908193abc66efc464abf0dc541bcc7bbe7bdc"
+          }
+        },
+        {
+          "client_id": "576702363979-n9s5oeqleq0gbtlcdg8v0ndqrfuqia0h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBx1PINLHJThwwP3u7SgT-VeoK99rgzQ0E"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "576702363979-n9s5oeqleq0gbtlcdg8v0ndqrfuqia0h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

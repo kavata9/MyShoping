@@ -56,7 +56,7 @@
                 android:layout_below="@+id/CustomerRatingTextView"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:textColor="@color/colorSecondaryText"
+                android:textColor="@color/colorAccent"
                 android:textStyle="italic" />
         </RelativeLayout>
 
@@ -80,27 +80,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="View on Walmart"
-                    android:id="@+id/websiteTextView"
+                    android:id="@+id/CustomerRatingTextView"
                     android:drawableLeft="@drawable/baseline_thumbs_up_down_black_24dp"
                     android:drawablePadding="4dp"
-                    android:textColor="@color/colorTextIcons"
+                    android:textColor="@color/colorPrimaryDark"
                     android:textSize="15sp"
                     android:textStyle="bold"
                     android:layout_marginBottom="10dp"
                     android:gravity="center" />
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="TrackName"
-                    android:drawablePadding="4dp"
-                    android:id="@+id/trackNameTextView"
-                    android:textColor="@color/colorTextIcons"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="10dp"
-                    android:gravity="center_vertical"/>
 
             </LinearLayout>
 

@@ -25,6 +25,9 @@ import butterknife.ButterKnife;
 
 public class ShoppingListAdapter extends RecyclerView.Adapter<ShoppingListAdapter.ShoppingViewHolder> {
 
+    private static final int MAX_WIDTH = 200;
+    private static final int MAX_HEIGHT = 200;
+
     private List<Item> mItem = new ArrayList<>();
     private Context mContext;
 
@@ -82,7 +85,11 @@ public class ShoppingListAdapter extends RecyclerView.Adapter<ShoppingListAdapte
 
         public void bindProducut(Item item) {
 
-            Picasso.with(mContext).load(item.getMediumImage()).into(mImageView);
+            Picasso.with(mContext)
+                    .load(item.getMediumImage())
+                    .resize(MAX_WIDTH, MAX_HEIGHT)
+                    .centerCrop()
+                    .into(mImageView);
 
             mNameTextView.setText(item.getName());
             mSalePriceTextView.setText("Price: " + item.getSalePrice() + "/5");
