@@ -75,7 +75,7 @@ private DatabaseReference mSearchedProductReference;
     }
 
     public void saveProductToFirebase(String product) {
-        mSearchedProductReference.setValue(product);
+        mSearchedProductReference.push().setValue(product);
     }
 
 

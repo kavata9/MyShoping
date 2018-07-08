@@ -8,9 +8,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.github.kavata9.myshoping.Constants;
 import com.github.kavata9.myshoping.R;
 import com.github.kavata9.myshoping.models.Item;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
 import org.parceler.Parcels;
@@ -21,7 +25,7 @@ import butterknife.ButterKnife;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ShoppingDetailFragment extends Fragment {
+public class ShoppingDetailFragment extends Fragment  implements View.OnClickListener {
 
 
     private static final int MAX_WIDTH = 400;
@@ -56,6 +60,7 @@ public class ShoppingDetailFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
         View view = inflater.inflate(R.layout.fragment_shopping_detail, container, false);
         ButterKnife.bind(this, view);
 
@@ -71,10 +76,24 @@ public class ShoppingDetailFragment extends Fragment {
         msalePriceLabel.setText((mItem.getSalePrice() + "/5"));
 
 
+        mSaveShoppingButton.setOnClickListener(this);
+
+
         return view;
     }
 
-
-    
+    @Override
+    public void onClick(View v) {
+        if (v == mSaveShoppingButton) {
+            DatabaseReference productRef = FirebaseDatabase
+                    .getInstance()
+                    .getReference(Constants.FIREBASE_CHILD_PRODUCTS);
+            productRef.push().setValue(mItem);
+            Toast.makeText(getContext(), "Saved", Toast.LENGTH_SHORT).show();
+        }
+    }
 }
+
+
+
 
