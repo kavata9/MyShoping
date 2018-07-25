@@ -19,8 +19,14 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.ShoppingListActivity" />
-        <activity android:name=".ui.ShoppingDetailActivity"
-            android:theme="@style/AppTheme">></activity>
+        <activity
+            android:name=".ui.ShoppingDetailActivity"
+            android:theme="@style/AppTheme">
+            >
+        </activity>
+        <activity android:name=".ui.SaveActivity" />
+        <activity android:name=".ui.SaveListActivity" />
+        <activity android:name=".ui.SaveShoppingListActivity"></activity>
     </application>
 
 </manifest>
